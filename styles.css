@@ -1,0 +1,663 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* 🌟 Global Styles */
+body {
+    background-color: #f7f3ee; /* Light Beige Background */
+    padding-top: 80px; /* Space for Fixed Header */
+    font-family: Arial, sans-serif;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensures full viewport height */
+}
+
+/* 🏠 Header */
+header {
+    background: linear-gradient(to right, #c1a57b, #a88e6b); /* Beige Gradient */
+    color: black;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* 📌 Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Navigation Lists */
+.nav-left, .nav-right {
+    list-style: none;
+    display: flex;
+}
+
+.nav-left li, .nav-right li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-left li a, .nav-right li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: 0.3s;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.nav-left li a:hover, .nav-right li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* 📂 Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f3e5d7;
+    min-width: 180px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px;
+    color: #5a4635;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #d6c3a5;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🔹 Buttons */
+.login-btn, .register-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.login-btn { background-color: #8c7356; }
+.register-btn { background-color: #b59d80; }
+
+.login-btn:hover, .register-btn:hover {
+    transform: scale(1.05);
+}
+
+/* 📦 Boxed Layout for Sections */
+.box {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    text-align: center;
+}
+
+/* ✨ Hero Section */
+.hero {
+    background: linear-gradient(to right, #f3e5d7, #d6c3a5);
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    color: #5a4635;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #7a6249;
+    margin-bottom: 10px;
+}
+
+.hero .btn {
+    display: inline-block;
+    background-color: #8c7356;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #7a6249;
+    transform: scale(1.05);
+}
+
+/* 📑 Sections */
+.about, .schemes, .how-to-apply, .contact,.register-box,.eligibility,.testimonials{
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.about h2, .schemes h2, .how-to-apply h2, .contact h2 {
+    color: #5a4635;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.about p, .schemes p, .how-to-apply ul, .contact p {
+    font-size: 1.1rem;
+    color: #7a6249;
+    line-height: 1.5;
+}
+
+/* ✅ How to Apply List */
+.how-to-apply ul {
+    list-style: none;
+    padding: 0;
+}
+
+.how-to-apply li {
+    background: #f3e5d7;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 8px 0;
+    font-weight: bold;
+}
+
+/* 🎭 Scheme Boxes */
+.scheme-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.scheme {
+    background-color: #f3e5d7;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 45%;
+}
+
+.scheme h3 {
+    color: #5a4635;
+    margin-bottom: 10px;
+}
+
+.scheme a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #8c7356;
+}
+
+.scheme a:hover {
+    color: #5a4635;
+}
+
+/* 📞 Contact Section */
+.contact .btn {
+    background-color: #a88e6b;
+    padding: 10px 15px;
+    display: inline-block;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact .btn:hover {
+    background-color: #8c7356;
+    transform: scale(1.05);
+}
+
+/* 📌 Footer */
+footer {
+    background: linear-gradient(to right, #a88e6b, #c1a57b);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    font-weight: bold;
+    margin-top: auto; /* Pushes footer to bottom */
+    position: relative;
+    bottom: 0;
+}
+/* 📲 Responsive Design */
+@media (max-width: 768px) {
+    .scheme-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .scheme {
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-left, .nav-right {
+        flex-direction: column;
+    }
+}
+/* 📦 About Section Box */
+.about {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* 🏛️ About Content */
+.about-box {
+    padding: 20px;
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: #5a4635;
+    margin-bottom: 15px;
+}
+
+/* 📝 Readable Text */
+.about p {
+    font-size: 1.2rem;
+    color: #7a6249;
+    line-height: 1.6;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* ✨ Highlight Key Words */
+.highlight {
+    color: #8c7356;
+    font-weight: bold;
+}
+
+/* 📌 About Button */
+.about .btn {
+    display: inline-block;
+    background-color: #a88e6b;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.about .btn:hover {
+    background-color: #8c7356;
+    transform: scale(1.05);
+}
+/* 📦 About & Eligibility Section Box */
+.about, .eligibility {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 900px;
+    margin: 40px auto; /* Increased margin for spacing */
+}
+
+/* 🏛️ About & Eligibility Content */
+.about-box, .eligibility-box {
+    padding: 20px;
+}
+
+/* 📝 Section Headings */
+.about h2, .eligibility h2 {
+    font-size: 2rem;
+    color: #5a4635;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* 📝 Readable Text */
+.about p, .eligibility p {
+    font-size: 1.2rem;
+    color: #7a6249;
+    line-height: 1.6;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* ✅ Eligibility List */
+.eligibility ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.eligibility li {
+    background: #f3e5d7;
+    padding: 12px;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #5a4635;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ✨ Highlight Key Words */
+.highlight {
+    color: #8c7356;
+    font-weight: bold;
+}
+
+/* 📌 About & Eligibility Buttons */
+.about .btn, .eligibility .btn {
+    display: inline-block;
+    background-color: #a88e6b;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.about .btn:hover, .eligibility .btn:hover {
+    background-color: #8c7356;
+    transform: scale(1.05);
+}
+/* ⭐ Testimonials Section */
+.testimonials {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f3e5d7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    color: #5a4635;
+    margin-bottom: 20px;
+}
+
+/* 📜 Testimonial Slider */
+.testimonial-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.testimonial-slider {
+    display: flex;
+    width: 300%; /* Make it large enough for sliding effect */
+}
+
+.testimonial {
+    min-width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+    color: #7a6249;
+    line-height: 1.5;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #8c7356;
+}
+.login-box {
+    background-color: #f5e6cc;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.login-box h2 {
+    margin-bottom: 15px;
+    color: #5a4633; /* Dark brown text */
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #d1bfa7;
+    border-radius: 5px;
+    background-color: #faf4eb;
+}
+
+.login-box button {
+    background: #8d775f; /* Dark beige */
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.login-box button:hover {
+    background: #725e48;
+}
+
+.login-box p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.login-box a {
+    color: #8d775f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}
+.form-container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input, select, button {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+.gender-options {
+    display: flex;  
+    gap: 1px; /* Adds spacing between checkboxes */
+    align-items: center; /* Aligns text and checkboxes properly */
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 1px; /* Space between checkbox and text */
+}
+.officials-list {
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #F5ECE0; /* Soft Beige */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.officials-list h3 {
+    color: #8B5E3C; /* Light Brown */
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.officials-list table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.officials-list th {
+    background-color: #A67C52; /* Dark Beige */
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 14px;
+}
+
+.officials-list td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #D4A373; /* Muted Gold */
+    color: #8B5E3C; /* Light Brown */
+}
+
+.officials-list tr:nth-child(even) {
+    background-color: #F5ECE0; /* Soft Beige */
+}
+
+.officials-list tr:hover {
+    background-color: #D4A373; /* Muted Gold */
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+
+/* Buttons */
+.officials-list .edit-btn, .officials-list .delete-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.officials-list .edit-btn {
+    background-color: #A67C52; /* Dark Beige */
+    color: #FFFFFF;
+}
+
+.officials-list .delete-btn {
+    background-color: #8B5E3C; /* Light Brown */
+    color: #FFFFFF;
+}
+
+.officials-list .edit-btn:hover, .officials-list .delete-btn:hover {
+    opacity: 0.8;
+}
+
+
+
+
+
